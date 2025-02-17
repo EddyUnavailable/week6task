@@ -1,14 +1,3 @@
 export default function main() {
-    return (
-      <>
-      </>
-
-
-
-
-    )
-  }
-
-    
-    
-
+  return <></>;
+}

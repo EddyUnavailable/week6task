@@ -12,6 +12,7 @@ export default function Shop() {
         `https://cookie-upgrade-api.vercel.app/api/upgrades`
       );
       const data = await res.json();
+      console.log(upgrades);
       setUpgrades(data);
     }
     fetchData();
@@ -19,12 +20,20 @@ export default function Shop() {
 
   return (
     <section>
+      <h1 className="upgrades">Upgrades</h1>
       {upgrades.map((upgrade) => (
-        <div key={upgrade.id} class="shopRows">
-          <p class="shop_boxes">{upgrade.name}</p>
-          <p class="shop_boxes">{upgrade.cost}</p>
-          <p class="shop_boxes">{upgrade.increase}</p>
-          <button>Buy</button>
+        <div key={upgrade.id} className="shopRows border_left">
+          <p className="shop_boxes">{upgrade.name}</p>
+          <p className="shop_boxes">{upgrade.cost}</p>
+          <p className="shop_boxes">{upgrade.increase}</p>
+          <button
+            className="buyButton"
+            onClick={() => {
+              handleBuyUpgrade(upgrade);
+            }}
+          >
+            buy
+          </button>
         </div>
       ))}
     </section>

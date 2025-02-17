@@ -1,52 +1,291 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background-color: rgb(114, 18, 204);
   /* color: yellow; */
 }
 
 .mainContainer {
-  display: flex;
-  flex-direction: row;
-
-  justify-content: center;
-  flex-wrap: nowrap;
-  border: 50px;
-  border-radius: 10px;
-  border-color: blueviolet;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 1%;
+  margin-top: 1%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 10px;
+  max-height: 100dvh;
   max-width: 100vw;
-  /* max-height: 100vh; */
-  background-color: rgb(255, 0, 208);
+  background: linear-gradient(
+      217deg,
+      rgba(255, 0, 0, 0.8),
+      rgba(255, 0, 0, 0) 70.71%
+    ),
+    linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%),
+    linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
+  overflow: hidden;
+  overflow: scroll;
+  overflow-y: scroll;
+  scrollbar-gutter: 15px;
 }
 
 .firstDiv {
   display: flex;
-  object-fit: contain;
+  flex-direction: column;
+  flex: 1;
   max-width: 500px;
-  max-height: 500px;
+  height: 500px;
+  border-left: 4px #505050;
+  border-bottom: 4px rgb(100, 100, 100);
+  border-right: 2px black;
+  border-top: 2px black;
+  border-radius: 2%;
+  border-style: solid;
+  overflow: hidden;
+  margin: 0 auto;
 }
 
-.shopRows {
-  max-width: 500px;
+.midDiv {
+  background-color: bisque;
+}
 
-  display: flex;
+.rightDiv {
+  background-color: bisque;
+}
+
+.leftDiv {
+  justify-items: center;
+  align-content: center;
+  background-color: bisque;
+}
+.shopRows {
+  font-size: medium;
+  max-width: 400px;
+  display: grid;
+  grid-template-columns: 150px 75px 50px 50px;
+  grid-template-rows: 40px;
   color: green;
-  background-color: rgb(216, 88, 3);
+  background-color: #b7b7b7;
+}
+
+.upgrades,
+.cctitle {
+  height: 55px;
+  max-width: 400px;
+  font-size: x-large;
+  color: rgb(213, 190, 38);
+  text-align: center;
+  text-shadow: 1px 1px 2px black;
+  border-radius: 1%;
+  border-left: 1px black;
+  border-bottom: 1px black;
+  border-right: 3px #505050;
+  border-top: 3px rgb(100, 100, 100);
+  border-style: solid;
+  background-color: #666666;
 }
 
 .display {
   align-content: center;
   text-align: right;
-  box-sizing: border-box;
-  border: 20px;
-  border-color: rgb(0, 255, 51);
+  border: 10px;
+  border-style: groove;
+  border-color: black;
+  border-radius: 10%;
   padding: 20px;
   width: 250px;
   height: 50px;
-  background-color: black;
-  color: aquamarine;
+  color: rgb(255, 0, 0);
+  font-size: 20px;
+  font-weight: 800;
+  background: linear-gradient(
+    rgb(100, 160, 100) 20%,
+    rgb(75, 175, 75) 40%,
+    rgb(50, 190, 50) 60%,
+    rgb(75, 175, 75) 80%,
+    rgb(100, 160, 100) 100%
+  );
+}
+.shop_boxes {
+  border-radius: 10%;
+  border-left: 1px black;
+  border-bottom: 1px black;
+  border-right: 3px #505050;
+  border-top: 3px rgb(100, 100, 100);
+  border-style: solid;
 }
 
-.shop_boxes {
-  border: 15px;
-  box-sizing: border-box;
-  border-color: black;
+.buttonShop {
+  border-top: 3px;
+  border-bottom: 10px;
+  border-left: 10px;
+  border-right: 3px;
+  border-color: red;
+  border-style: solid;
+}
+
+.cookieBox {
+  align-self: center;
+  justify-items: center;
+  align-content: center;
+  border-radius: 50%;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.bounce {
+  animation-name: bounce;
+}
+@keyframes bounce {
+  0%,
+  20%,
+  40%,
+  60%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-45px);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  75% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes moveAndChangeColor {
+  0% {
+    background-color: red;
+    transform: translateX(0);
+    border-radius: 12%;
+  }
+  25% {
+    background-color: red;
+    transform: translateX(0);
+    border-radius: 12%;
+  }
+  50% {
+    background-color: red;
+    transform: translateX(0);
+    border-radius: 12%;
+  }
+  75% {
+    background-color: yellow;
+    transform: translateX(100px);
+    border-radius: 25%;
+  }
+  100% {
+    background-color: green;
+    transform: translateX(200px);
+    border-radius: 50%;
+  }
+}
+
+.box {
+  vertical-align: middle;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation: moveAndChangeColor 4s infinite;
+}
+
+.bounce {
+  vertical-align: middle;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  box-shadow: #484848;
+  animation: bounce 3s infinite;
+}
+
+.buyButton {
+  height: 40px;
+  width: 50px;
+  border-left: 7px #505050;
+  border-bottom: 7px rgb(100, 100, 100);
+  border-right: 2px black;
+  border-top: 2px black;
+  border-radius: 20%;
+  border-style: solid;
+  background: linear-gradient(-45deg, #484848 40%, #666666 50%, #484848 80%);
+  background-size: 500%;
+  background-position-x: 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+.buyButton:hover {
+  height: 40px;
+  width: 50px;
+  border-left: 7px rgb(175, 0, 0);
+  border-bottom: 7px rgb(150, 0, 0);
+  border-right: 2px rgb(100, 0, 0);
+  border-top: 2px rgb(100, 0, 0);
+  border-radius: 20%;
+  border-style: solid;
+  background: linear-gradient(
+    -45deg,
+    rgb(200, 0, 0) 40%,
+    rgb(245, 0, 0) 50%,
+    rgb(200, 0, 0) 80%
+  );
+  background-size: 500%;
+  background-position-x: 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+@keyframes shimmer {
+  to {
+    background-position-x: 0%;
+  }
+}
+
+.light {
+  align-self: center;
+  height: 25px;
+  width: 350px;
+  color: red;
+  background-color: red;
+  border-radius: 1%;
+  border-style: solid;
+}
+
+.card {
+  align-self: center;
+  height: 25px;
+  width: 350px;
+  background: linear-gradient(
+    -45deg,
+    #9f0101 20%,
+    #ff0000 40%,
+    #ff9900,
+    #fff700,
+    #f7c4c4 50%,
+    #fff700,
+    #ff9900 80%,
+    #ff0000,
+    #f80000
+  );
+  background-size: 400%;
+  background-position-x: 100%;
+  animation: flash 0.8s infinite linear;
+}
+
+@keyframes flash {
+  to {
+    background-position-x: 0%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .mainContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }
