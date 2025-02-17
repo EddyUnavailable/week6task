@@ -27,9 +27,8 @@ body {
     linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%),
     linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
   overflow: hidden;
-  overflow: scroll;
   overflow-y: scroll;
-  scrollbar-gutter: 15px;
+  scrollbar-gutter: 20px;
 }
 
 .firstDiv {
@@ -136,20 +135,64 @@ body {
   vertical-align: middle;
 }
 
+.ball1 {
+  align-self: center;
+  justify-items: center;
+  align-content: center;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  align-items: center;
+  vertical-align: middle;
+  background-color: blue;
+}
+
+.box {
+  vertical-align: middle;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation: moveAndChangeColor 4s infinite;
+}
+
+.bounce2 {
+  vertical-align: middle;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  box-shadow: #484848;
+  animation: bounce 3s infinite;
+}
+.bounce1 {
+  animation-name: bounce1;
+}
+
 .bounce {
   animation-name: bounce;
 }
 @keyframes bounce {
-  0%,
-  20%,
-  40%,
-  60%,
-  80%,
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(0);
+  }
+  60% {
+    transform: translateY(0);
+  }
+  80% {
+    transform: translateY(0);
+  }
   100% {
     transform: translateY(0);
   }
   25% {
     transform: translateY(-45px);
+    border-radius: 47% 53% 49% 51% / 29% 29% 71% 71%;
   }
   50% {
     transform: translateY(-30px);
@@ -185,24 +228,6 @@ body {
     transform: translateX(200px);
     border-radius: 50%;
   }
-}
-
-.box {
-  vertical-align: middle;
-  text-align: center;
-  width: 100px;
-  height: 100px;
-  background-color: red;
-  animation: moveAndChangeColor 4s infinite;
-}
-
-.bounce {
-  vertical-align: middle;
-  width: 100px;
-  height: 100px;
-  background-color: red;
-  box-shadow: #484848;
-  animation: bounce 3s infinite;
 }
 
 .buyButton {

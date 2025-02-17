@@ -1,0 +1,111 @@
+.ball_def {
+  justify-items: center;
+  align-content: center;
+  border-radius: 50%;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.ball_red {
+  background-color: red;
+}
+.ball_blue {
+  background-color: blue;
+}
+.ball_green {
+  background-color: green;
+}
+.ball_yellow {
+  background-color: yellow;
+}
+.ball_pink {
+  background-color: rgb(225, 82, 191);
+}
+
+.ball_large {
+  height: 100px;
+  width: 100px;
+}
+.ball_med {
+  height: 75px;
+  width: 75px;
+}
+.ball_small {
+  height: 50px;
+  width: 50px;
+}
+.ball_tiny {
+  height: 25px;
+  width: 25px;
+}
+
+.move_change {
+  animation: moveAndChangeColor 4s infinite;
+}
+
+.bounce_fast {
+  animation: bounce1 3s infinite;
+}
+.bounce_med {
+  animation: bounce1 6s infinite;
+}
+
+.bounce_slow {
+  animation: bounce1 9s infinite;
+}
+
+.bounce3 {
+  vertical-align: middle;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  box-shadow: #484848;
+  animation: bounce1 3s infinite;
+}
+@keyframes bounce1 {
+  0%,
+  20%,
+  40%,
+  60%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-45px);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  75% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes move_Change {
+  0% {
+    background-color: red;
+    transform: translateX(0);
+    border-radius: 12%;
+  }
+  25% {
+    background-color: red;
+    transform: translateX(0);
+    border-radius: 12%;
+  }
+  50% {
+    background-color: red;
+    transform: translateX(0);
+    border-radius: 12%;
+  }
+  75% {
+    background-color: yellow;
+    transform: translateX(100px);
+    border-radius: 25%;
+  }
+  100% {
+    background-color: green;
+    transform: translateX(200px);
+    border-radius: 50%;
+  }
+}
