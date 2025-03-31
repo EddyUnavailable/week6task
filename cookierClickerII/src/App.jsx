@@ -18,9 +18,8 @@ export default function App() {
   const [cookies, setCookies] = useState(() => {
     const savedData = localStorage.getItem("cookies.cookies");
     return savedData != null
-      ? JSON.parse(localStorage.getItem("cookies.cookies"))
-      : defaultState;
-  });
+      ? JSON.parse(savedData) : defaultState;
+    });
 
   useEffect(() => {
     if (cookies) {
@@ -42,7 +41,12 @@ export default function App() {
   }, []);
 
   return (
-    <section className="mainContainer">
+    <div
+      style={{
+        gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+      }}
+      className="mainContainer"
+    >
       <div className="firstDiv leftDiv">
         <h1 className="cctitle">Cookie Clicker</h1>
         <p
@@ -76,9 +80,9 @@ export default function App() {
         <p className="display">{cookies.cps}</p>
       </div>
       <div className="firstDiv rightDiv">
-        <Shop />
+      <Shop cookies={cookies} setCookies={setCookies} />
       </div>
-    </section>
+    </div>
   );
 }
 

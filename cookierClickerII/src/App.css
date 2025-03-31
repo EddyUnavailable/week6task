@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 }
 
 body {
@@ -9,7 +9,27 @@ body {
   /* color: yellow; */
 }
 
+/* style={{
+  gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))"
+}} */
+
 .mainContainer {
+  --grid-min-col-size: 10rem:var;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(min(var(--grid-min-col-size), 100%), 1fr)
+  );
+  gap: 10px;
+}
+
+.mainContainer3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(10rem, 100%), 1fr));
+  gap: 1rem;
+}
+
+.mainContainer2 {
   margin-left: 5%;
   margin-right: 5%;
   margin-bottom: 1%;

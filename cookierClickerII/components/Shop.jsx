@@ -1,5 +1,4 @@
 import {useEffect, useState} from "react";
-import App from "../src/App";
 
 export default function Shop({cookies, setCookies}) {
   const [upgrades, setUpgrades] = useState([]);
@@ -21,13 +20,16 @@ export default function Shop({cookies, setCookies}) {
     // the user has enough cookies to buy the upgrades
     if (cookies.cookies >= upgrades.cost) {
       setCookies((currentState) => ({
+        
         ...currentState,
         cookies: currentState.cookies - upgrades.cost,
         cps: currentState.cps + upgrades.increase,
         purchasedItems: [...currentState.purchasedItems, upgrades],
+        
       }));
+      console.log(cookies);
     }
-    console.log(cookies);
+    
   }
 
   // a small function to find out how many of each items I've bought
